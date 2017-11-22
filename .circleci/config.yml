@@ -1,6 +1,6 @@
 version: 2
 jobs:
-   build:
+   docker-tests:
      docker:
        - image: circleci/golang:1.7
      steps:
@@ -9,3 +9,18 @@ jobs:
        - run: cat /etc/resolv.conf
        - run: ./dig-docker-dns.sh
 
+   machine-tests:
+     machine:
+	enabled: true
+     steps:
+       - checkout
+       - run: ./setup.sh
+       - run: cat /etc/resolv.conf
+       - run: ./dig-docker-dns.sh
+
+workflows:
+  version: 2
+  all-tests:
+    jobs:
+      - docker-tests
+      - machine-tests
