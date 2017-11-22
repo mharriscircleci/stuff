@@ -8,6 +8,7 @@ jobs:
        - run: ./setup.sh
        - run: cat /etc/resolv.conf
        - run: ./dig-docker-dns.sh
+       - run: ./dig-mharrisnet.sh
 
    machine-tests:
      machine:
@@ -17,6 +18,7 @@ jobs:
        - run: ./setup.sh
        - run: cat /etc/resolv.conf
        - run: ./dig-docker-dns.sh
+       - run: ./dig-mharrisnet.sh
 
 workflows:
   version: 2
