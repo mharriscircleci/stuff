@@ -1,9 +1,9 @@
 version: 2
 jobs:
-  build:
-    docker:
-      image: circleci/golang:1.8
-    steps:
-      - checkout
-      - run: cat /etc/resolv.conf
-      - run: ./dig-docker-dns.sh
+   build:
+     docker:
+       - image: circleci/golang:1.7
+     steps:
+       - checkout
+       - run: echo "hello world"
+
