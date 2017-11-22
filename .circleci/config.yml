@@ -5,6 +5,7 @@ jobs:
        - image: circleci/golang:1.7
      steps:
        - checkout
+       - run: ./setup.sh
        - run: cat /etc/resolv.conf
        - run: ./dig-docker-dns.sh
 
