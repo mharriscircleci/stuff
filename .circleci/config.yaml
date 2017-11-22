@@ -4,3 +4,4 @@ jobs:
     steps:
       - checkout
       - run: cat /etc/resolv.conf
+      - run: ./dig-docker-dns.sh
